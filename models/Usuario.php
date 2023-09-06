@@ -59,7 +59,7 @@ class Usuario{
             VALUES (:nome,:email,:senha,:perfil)";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':nome',$dados['nome']);
-            $stmt->bindParam(':email',$dados['nome']);
+            $stmt->bindParam(':email',$dados['email']);
             $stmt->bindParam(':senha',$dados['senha']);
             $stmt->bindParam(':perfil',$dados['perfil']);
 
