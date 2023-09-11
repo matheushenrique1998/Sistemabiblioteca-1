@@ -21,13 +21,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/models/Livro.php";
                 <th>preco</th>
                 <th>ano_public</th>
                 <th>isbn</th>
+                <th>Ação</th>
             </tr>
         </thead>
 
       <tbody>
         <?php 
-            $livroController = new $livroController();
-            $livro = $livroController->listarLivro();
+            $livroController = new livroController();
+            $livro = $livroController->listaLivro();
 
             foreach($livro as $book):
         ?>
@@ -42,8 +43,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/models/Livro.php";
             <td><?=$book->isbn?></td>
             
             <td>
-                <a href="#" class = "btn btn-primary"></a>
-                <a href="#" class = "btn btn-danger"></a>
+                <a href="#" class = "btn btn-primary">Editar</a>
+                <a href="#" class = "btn btn-danger">Excluir</a>
             </td>
         </tr>
     

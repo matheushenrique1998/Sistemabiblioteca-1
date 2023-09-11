@@ -82,8 +82,16 @@ class Livros {
             echo "Erro ao editar:".$e->getMessage();
             return false;
         }
+    }
 
-
-
+    public function excluir ($id){
+        try{
+            $sql = "DELETE FROM {$this->table} WHERE id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':id_livri', $id, PDO::PARAM_INT);
+            $stmt->execute();
+        }catch(PDOException $e){
+            echo 'Erro ao excluir:'.$e->getMessage();
+        }
     }
 }

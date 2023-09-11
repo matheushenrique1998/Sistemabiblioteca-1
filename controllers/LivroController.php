@@ -9,6 +9,7 @@ class LivroController{
     }
 
     public function listaLivro(){
+        
         return $this->livroModel->listar();
     }
 }
