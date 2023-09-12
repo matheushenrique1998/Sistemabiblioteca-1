@@ -1,5 +1,5 @@
 <?php 
-    
+    session_start();
     require_once $_SERVER['DOCUMENT_ROOT'] . "/database/DBConexao.php";
 
 class Usuario{
@@ -20,7 +20,7 @@ class Usuario{
      */
     public function buscar($id){
         try{
-            $sql="SELECT * FROM {$this->table} WHERE id=:id";
+            $sql="SELECT * FROM {$this->table} WHERE id_usuarios=:id";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(":id",$id, PDO::PARAM_INT);
             $stmt->execute();
@@ -64,10 +64,13 @@ class Usuario{
             $stmt->bindParam(':perfil',$dados['perfil']);
 
             $stmt->execute();
+            $_SESSION['sucesso'] = "Cadastro realizado com sucesso!";
             return true;
             
         }catch(PDOException $e){
             echo "Erro ao cadastrar:".$e->getMessage();
+
+            $_SESSION['erro'] = "Erro ao cadastrar o usuário!";
             return false;
         }
     }

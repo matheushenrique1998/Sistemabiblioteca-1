@@ -8,12 +8,13 @@
 ?>
 
   <main class="container mt-3 mb-3">
-      <h1>Lista de Usúarios</h1>
-
+      <h1>Lista de Usúarios
+      <a href="cadastrar.php" class = "btn btn-primary float-end">Cadastrar</a>
+      </h1>
+      
+        <?php require_once $_SERVER['DOCUMENT_ROOT']. "/includes/alerta.php";?>
       <table class="table table-striped">
         <thead>
-           
-        
             <tr>
                 <th>#</th>
                 <th>Nome</th>
@@ -38,7 +39,7 @@
                 <td><?=$user->perfil?></td>
 
                 <td>
-                    <a href = "#" class = "btn btn-primary">Editar</a>
+                    <a href = "editar.php?id=<?=$user->id_usuarios ?>" class = "btn btn-primary">Editar</a>
                     <a href = "#" class = "btn btn-danger">Excluir</a> 
                 </td>
             </tr>
