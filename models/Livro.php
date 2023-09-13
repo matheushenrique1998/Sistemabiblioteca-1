@@ -63,13 +63,13 @@ class Livros {
         }
     }
 
-    public function editar ($id,$dados){
+    public function editar ($id, $dados){
         try{
-            $sql = "UPDATE {$this->table} SET titulo = :titulo, autor = :autor, numeros_paginas = :numeros_paginas, preco = :preco, ano_public = :ano_public, isbn = ;isbn WHERE id_livro = :id_livro";
+            $sql = "UPDATE {$this->table} SET titulo = :titulo, autor = :autor, numeros_pagina = :numeros_pagina, preco = :preco, ano_public = :ano_public, isbn = ;isbn WHERE id_livro = :id_livro";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':titulo',$dados['titulo']);
             $stmt->bindParam(':autor',$dados['autor']);
-            $stmt->bindParam(':numeros_paginas',$dados['numeros_paginas']);
+            $stmt->bindParam(':numeros_pagina',$dados['numeros_pagina']);
             $stmt->bindParam(':preco',$dados['preco']);
             $stmt->bindParam(':ano_public',$dados['ano_public']);
             $stmt->bindParam(':isbn',$dados['isbn']);

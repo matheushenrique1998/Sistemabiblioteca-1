@@ -2,14 +2,15 @@
     require_once $_SERVER['DOCUMENT_ROOT'] . "/controllers/AlunoController.php";
 
     require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/cabecalho.php";
-
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/models/Aluno.php";
 ?>
 
     <main class="container mt-3 mb-3">
-      <h1>Lista de Alunos</h1>
+      <h1>Lista de Alunos
+      <a href="cadastrar.php" class = "btn btn-primary float-end">Cadastrar</a>
+      </h1>      
 
-      <table>
+      <?php require_once $_SERVER['DOCUMENT_ROOT']. "/includes/alerta.php";?>
+      <table class="table table-striped">
             <thead>
                 <tr>
                     <th>#</th>
@@ -40,7 +41,7 @@
                     <td><?=$student->data_nascimento?></td>
 
                     <td>
-                        <a href="#" class="btn btn-primary">Editar</a>
+                        <a href="editar.php/id=<?$student->id_aluno?>" class="btn btn-primary">Editar</a>
                         <a href="#" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>
