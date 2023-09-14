@@ -13,7 +13,7 @@
     <form action="cadastrar.php" method="post" class="row g-3">
         <div  class="col-md-12">
             <label for="nome" class="form-label">Nome</label>
-            <input type="nome" name="nome" id="nome" class="form-control"
+            <input type="text" name="nome" id="nome" class="form-control"
             required>
         </div>
 
@@ -30,17 +30,17 @@
 
     <div class="col-md-6">
         <label for="telefone" class="form-label">Telefone</label>
-        <input type="telefone" name="telefone" id="telefone" class="form-control" required>
+        <input type="text" name="telefone" id="telefone" class="form-control" required>
     </div>
 
     <div class="col-md-6">
         <label for="celular" class="form-label">Celular</label>
-        <input type="celular" name="celular" id="celular" class="form-control" required>
+        <input type="text" name="celular" id="celular" class="form-control" required>
     </div>
 
     <div class="col-md-12">
         <label for="data_nascimento" class="form-label">Data De Nascimento</label>
-        <input type="data_nascimento" name="data_nascimento" id="data_nascimento" class="form-control" required>
+        <input type="int" name="data_nascimento" id="data_nascimento" class="form-control" required>
     </div>
 
     <div class="col-12">

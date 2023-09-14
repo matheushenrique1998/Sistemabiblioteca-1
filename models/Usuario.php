@@ -18,11 +18,11 @@ class Usuario{
      * @param int $id
      * @return Usario|null
      */
-    public function buscar($id){
+    public function buscar($id_usuarios){
         try{
-            $sql="SELECT * FROM {$this->table} WHERE id_usuarios=:id";
+            $sql="SELECT * FROM {$this->table} WHERE id_usuarios=:id_usuarios";
             $stmt = $this->db->prepare($sql);
-            $stmt->bindParam(":id",$id, PDO::PARAM_INT);
+            $stmt->bindParam(":id_usuarios",$id_usuarios, PDO::PARAM_INT);
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_OBJ);
         }catch(Exception $e){
@@ -81,35 +81,34 @@ class Usuario{
      * @param array $dados
      * @return bool
      */
-    public function editar ($id,$dados){
+    public function editar ($id_usuarios,$dados){
         try{
-            $sql = "UPDATE {$this->table} SET nome = :nome, email = :email, senha = :senha, perfil = :perfil WHERE id = :id";
+            $sql = "UPDATE {$this->table} SET nome = :nome, email = :email, senha = :senha, perfil = :perfil WHERE id_usuarios = :id_usuarios";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':nome',$dados['nome']);
             $stmt->bindParam(':email',$dados['email']);
             $stmt->bindParam(':senha',$dados['senha']);
             $stmt->bindParam(':perfil',$dados['perfil']);
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(':id_usuarios', $id_usuarios, PDO::PARAM_INT);
             
             $stmt->execute();
+            $_SESSION['sucesso'] = "Usuário editado com sucesso";
             return true;
 
         }catch(PDOException $e){
             echo "Erro ao editar:".$e->getMessage();
             return false;
         }
-
-
-
     }
 
     //Excluir usuário
-    public function excluir ($id){
+    public function excluir ($id_usuarios){
         try{
-            $sql = "DELETE FROM {$this->table} WHERE id = :id";
+            $sql = "DELETE FROM {$this->table} WHERE id_usuarios = :id_usuarios";
             $stmt = $this->db->prepare($sql);
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(':id_usuarios', $id_usuarios, PDO::PARAM_INT);
             $stmt->execute();
+            $_SESSION['sucesso'] = "Usuário excluido com sucesso!!";
         }catch(PDOException $e){
             echo 'Erro ao excluir:'.$e->getMessage();
         }

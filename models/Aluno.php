@@ -11,11 +11,11 @@
             $this->db=DBConexao::getConexao();
         }
 
-        public function buscar($id){
+        public function buscar($id_aluno){
             try{
                 $sql = "SELECT * FROM {$this->table} WHERE id_aluno = :id_aluno";
                 $stmt = $this->db->prepare($sql);
-                $stmt->bindParam(":id_aluno", $id, PDO::PARAM_INT);
+                $stmt->bindParam(":id_aluno", $id_aluno, PDO::PARAM_INT);
                 $stmt->execute();
                 return $stmt->fetch(PDO::FETCH_OBJ);
             }catch(Exception $e){
@@ -58,7 +58,7 @@
             }
         }
 
-        public function editar ($id,$dados){
+        public function editar ($id_aluno,$dados){
             try{
                 $sql = "UPDATE {$this->table} SET nome = :nome, cpf = :cpf, email = :email, telefone = :telefone, celular = :celular, data_nascimento = :data_nascimento WHERE id_aluno = :id_aluno";
                 $stmt = $this->db->prepare($sql);
@@ -67,7 +67,7 @@
                 $stmt->bindParam(':telefone',$dados['telefone']);
                 $stmt->bindParam(':celular',$dados['celular']);
                 $stmt->bindParam(':data_nascimento',$dados['data_nascimento']);
-                $stmt->bindParam(':id_aluno', $id, PDO::PARAM_INT);
+                $stmt->bindParam(':id_aluno', $id_aluno, PDO::PARAM_INT);
                 
                 $stmt->execute();
                 return true;
@@ -77,11 +77,11 @@
             }
         }
 
-        public function excluir ($id){
+        public function excluir ($id_aluno){
             try{
                 $sql = "DELETE FROM {$this->table} WHERE id_aluno = :id_aluno";
                 $stmt = $this->db->prepare($sql);
-                $stmt->bindParam(':id_aluno', $id, PDO::PARAM_INT);
+                $stmt->bindParam(':id_aluno', $id_aluno, PDO::PARAM_INT);
                 $stmt->execute();
             }catch(Exception $e){
                 echo 'Erro ao excluir:'.$e->getMessage();

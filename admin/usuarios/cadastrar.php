@@ -25,7 +25,7 @@
 
         <div class="col-md-6">
             <label for="senha" class="form-label">Senha</label>
-            <input type="senha" name="senha" id="senha" class="form-control"
+            <input type="password" name="senha" id="senha" class="form-control"
             required>
         </div>
 

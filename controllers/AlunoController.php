@@ -36,9 +36,16 @@ class AlunoController{
     }
 
     public function editarAluno(){
-        $id = $_GET['id_aluno'];
+        $id_aluno = $_GET['id_aluno'];
         
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+            if(isset($_POST['senha']) && !empty($_POST['senha'])){
+                //Criar nova senha
+                $novaSenha=password_hash($_POST['senha'],PASSWORD_DEFAULT);
+            }else{
+                
+            }
             $dados = [
                 'nome' => $_POST['nome'],
                 'cpf' => $_POST['cpf'],
@@ -47,12 +54,12 @@ class AlunoController{
                 'celular' => $_POST['celular'],
                 'data_nascimento' => $_POST['data_nascimento']
             ];
-            $this->alunoModel->editar($id, $dados);
+            $this->alunoModel->editar($id_aluno, $dados);
 
             header('Location: index.php');
             exit;
         }
 
-        return $this->alunoModel->buscar($id);
+        return $this->alunoModel->buscar($id_aluno);
     }
 }

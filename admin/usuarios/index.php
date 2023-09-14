@@ -3,7 +3,12 @@
 
   require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/cabecalho.php";
   
-  require_once $_SERVER['DOCUMENT_ROOT'] . "/models/Usuario.php";
+  if(isset($_GET["del"]) && !empty($_GET['id_usuarios'])){
+    
+    $usuarioController = new UsuarioController();
+    $usuarioController->excluirUsuario();
+
+  }
 
 ?>
 
@@ -13,6 +18,8 @@
       </h1>
       
         <?php require_once $_SERVER['DOCUMENT_ROOT']. "/includes/alerta.php";?>
+
+
       <table class="table table-striped">
         <thead>
             <tr>
@@ -39,8 +46,8 @@
                 <td><?=$user->perfil?></td>
 
                 <td>
-                    <a href = "editar.php?id=<?=$user->id_usuarios ?>" class = "btn btn-primary">Editar</a>
-                    <a href = "#" class = "btn btn-danger">Excluir</a> 
+                    <a href = "editar.php?id_usuarios=<?=$user->id_usuarios ?>" class = "btn btn-primary">Editar</a>
+                    <a href = "index.php?id_usuarios=<?=$user->id_usuarios?>&del" class = "btn btn-danger">Excluir</a> 
                 </td>
             </tr>
 
