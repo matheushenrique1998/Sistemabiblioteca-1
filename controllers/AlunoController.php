@@ -39,13 +39,6 @@ class AlunoController{
         $id_aluno = $_GET['id_aluno'];
         
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-            if(isset($_POST['senha']) && !empty($_POST['senha'])){
-                //Criar nova senha
-                $novaSenha=password_hash($_POST['senha'],PASSWORD_DEFAULT);
-            }else{
-                
-            }
             $dados = [
                 'nome' => $_POST['nome'],
                 'cpf' => $_POST['cpf'],

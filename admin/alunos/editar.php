@@ -11,7 +11,7 @@ $student = $alunoController->editarAluno();
 <main class = "container mt-3 mb-3">
     <h1>Editar Aluno</h1>
 
-    <form action="editar.php?id=<?=$student->id_aluno?>" method="post" class="row g-3">
+    <form action="editar.php?id_aluno=<?=$student->id_aluno?>" method="post" class="row g-3">
     <div class="col-md-12">
         <label for="nome" class="form-label">Nome</label>
         <input type="text" name="nome" id="nome" class="form-control" required value="<?=$student->nome?>">

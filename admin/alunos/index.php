@@ -41,7 +41,7 @@
                     <td><?=$student->data_nascimento?></td>
 
                     <td>
-                        <a href="editar.php/id=<?$student->id_aluno?>" class="btn btn-primary">Editar</a>
+                        <a href="editar.php?id_aluno=<?=$student->id_aluno?>" class="btn btn-primary">Editar</a>
                         <a href="#" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>

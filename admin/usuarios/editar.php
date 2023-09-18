@@ -12,7 +12,7 @@
     <h1>Editar Usuário</h1>
 
     <form action="editar.php?id_usuarios=<?=$usuario->id_usuarios?>" method="post" class="row g-3">
-        <div  class=" col-md-12">
+        <div class=" col-md-12">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" name="nome" id="nome" class="form-control"
             required value="<?=$usuario->nome?>">
