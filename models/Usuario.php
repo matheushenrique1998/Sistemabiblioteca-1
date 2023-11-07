@@ -13,11 +13,7 @@ class Usuario{
         $this->db=DBConexao::getConexao();
     }
 
-    /**
-     * Busca registro único
-     * @param int $id
-     * @return Usario|null
-     */
+    
     public function buscar($id_usuarios){
         try{
             $sql="SELECT * FROM {$this->table} WHERE id_usuarios=:id_usuarios";

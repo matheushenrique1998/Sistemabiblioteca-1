@@ -13,7 +13,7 @@
       <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>1</th>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>E-mail</th>

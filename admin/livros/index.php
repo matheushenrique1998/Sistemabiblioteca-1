@@ -14,7 +14,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/cabecalho.php";
       <table class = "table table-striped">
         <thead>
             <tr>
-                <th>#</th>
+                <th>1</th>
                 <th>Título</th>
                 <th>Autor</th>
                 <th>Números de Páginas</th>

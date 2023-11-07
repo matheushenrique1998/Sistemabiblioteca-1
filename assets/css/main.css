@@ -1,3 +1,4 @@
+
 :root{
     --primaria: #3e4095;
     --secundaria: #00afee;
@@ -5,7 +6,7 @@
     --texto: #4d4d4d;
     --label-categoria: #d9c505;
 }
-
+ 
 *{
     margin: 0;
     padding: 0;
@@ -15,13 +16,13 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: var(--texto);
 }
-
+ 
 .container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 15px;
 }
-
+ 
 #cabecalho{
     display: flex;
     justify-content: space-between;
@@ -31,18 +32,18 @@ body {
     display: flex;
     list-style: none;
 }
-
+ 
 #menu ul li{
     margin-left: 20px;
     margin-right: 20px;
 }
-
+ 
 #menu ul a{
     color: var(--texto);
     font-weight: 500;
     text-decoration: none;
 }
-
+ 
 .btn-secundario{
     background-color: var(--secundaria);
     color: #ffffff;
@@ -51,4 +52,85 @@ body {
     border-radius: 10px;
     text-transform: uppercase;
     font-size: 0.8rem;
+}
+ 
+#banner{
+    background-image: url(../img/banner.jpg);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+   
+}
+ 
+#banner p {
+    margin: 20px;
+}
+ 
+#formProcurar {
+    background-color: #fff;
+    color: #4d4d4d;
+    border-radius: 20px;
+}
+ 
+#formProcurar form {
+    display: flex;
+}
+ 
+#formProcurar form input {
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 18px;
+    border: none;
+}
+ 
+#formProcurar form button {
+    background-color: var(--primaria);
+    color: #fff;
+    font-size: bold;
+    border: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 5px;
+    border-radius: 20px;
+ 
+}
+ 
+#formProcurar form i {
+    font-size: 18px;
+    margin: 10px;
+}
+ 
+.bloco-titulo{
+    border-left: 4px solid var(--primaria);
+    padding-left: 10px;
+    margin-bottom: 30px
+    ;
+}
+ 
+.bloco-titulo .titulo{
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.bloco-titulo .titulo a{
+    color: var(--texto);
+    font-size: .8rem;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+.lista-livro {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.lista-livro img{
+    width: 100%;
+    height: auto;
+    border-radius: 5px ;
 }

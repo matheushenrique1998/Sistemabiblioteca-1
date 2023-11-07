@@ -23,7 +23,7 @@
       <table class="table table-striped">
         <thead>
             <tr>
-                <th>#</th>
+                <th>1</th>
                 <th>Nome</th>
                 <th>E-mail</th>
                 <th>Perfil</th>
@@ -40,14 +40,14 @@
             foreach($usuarios as $user):
         ?>
             <tr>
-                <td><?=$user->id_usuarios?></td>
+                <td><?=$user->id_usuario?></td>
                 <td><?=$user->nome?></td>
                 <td><?=$user->email?></td>
                 <td><?=$user->perfil?></td>
 
                 <td>
-                    <a href = "editar.php?id_usuarios=<?=$user->id_usuarios ?>" class = "btn btn-primary">Editar</a>
-                    <a href = "index.php?id_usuarios=<?=$user->id_usuarios?>&del" class = "btn btn-danger">Excluir</a> 
+                    <a href = "editar.php?id_usuarios=<?=$user->id_usuario?>" class = "btn btn-primary">Editar</a>
+                    <a href = "index.php?id_usuarios=<?=$user->id_usuario?>&del" class = "btn btn-danger">Excluir</a> 
                 </td>
             </tr>
 
